@@ -1,18 +1,18 @@
 ;******************************************************************************;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_isdigit.s                                       :+:      :+:    :+:    ;
+;    ft_isprint.s                                       :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: flagoutt <marvin@42.fr>                    +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2015/03/13 16:32:38 by flagoutt          #+#    #+#              ;
-;    Updated: 2015/03/13 20:17:38 by flagoutt         ###   ########.fr        ;
+;    Created: 2015/03/21 19:51:49 by flagoutt          #+#    #+#              ;
+;    Updated: 2015/03/21 19:51:56 by flagoutt         ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
-global _ft_isdigit
+global _ft_isprint
 	
-_ft_isdigit:
+_ft_isprint:
 	cmp rdi, 32
 	jl no						; Si inferieur
 	cmp rdi, 126

@@ -6,7 +6,7 @@
 #    By: flagoutt <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/13 16:23:18 by flagoutt          #+#    #+#              #
-#    Updated: 2015/03/21 19:26:04 by flagoutt         ###   ########.fr        #
+#    Updated: 2015/03/21 19:42:10 by flagoutt         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,8 +26,7 @@ SRCS =	ft_isdigit.s \
 		ft_strdup.s \
 		ft_strndup.s \
 		ft_cat.s \
-		ft_strlen.s \
-		ft_countwords.s
+		ft_strlen.s
 OBJS = $(SRCS:.s=.o)
 NAME = libfts.a
 

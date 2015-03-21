@@ -6,7 +6,7 @@
 /*   By: flagoutt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/13 16:38:47 by flagoutt          #+#    #+#             */
-/*   Updated: 2015/03/21 18:11:25 by flagoutt         ###   ########.fr       */
+/*   Updated: 2015/03/21 19:51:11 by flagoutt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int tab[4] = {0, 0, 0, 0};
@@ -20,6 +20,7 @@ int                 ft_isalpha(int c);
 int                 ft_isdigit(int c);
 int                 ft_isalnum(int c);
 int                 ft_isascii(int c);
+int                 ft_isprint(int c);
 int                 ft_toupper(int c);
 int                 ft_tolower(int c);
 int			        ft_strlen(char *str);
@@ -32,7 +33,6 @@ char                *ft_strndup(const char *s1, int n);
 void                ft_bzero(void *s, int n);
 int					ft_cat(int fd);
 int                 ft_isspace(int c);
-int					ft_countwords(char *str);
 
 int main(void)
 {
@@ -65,6 +65,23 @@ int main(void)
 	printf("Is ' alnum ? %i\n", ft_isalnum('\''));
 	printf("Is [ alnum ? %i\n", ft_isalnum('['));
 	printf("Is @ alnum ? %i\n", ft_isalnum('@'));
+
+	printf("\n \033[36m--- ft_isascii ---\033[0m\n");
+	printf("Is @ ascii ? %i\n", ft_isascii('@'));
+	printf("Is { ascii ? %i\n", ft_isascii('{'));
+	printf("Is ' ascii ? %i\n", ft_isascii('\''));
+	printf("Is [ ascii ? %i\n", ft_isascii('['));
+	printf("Is character -1 ascii ? %i\n", ft_isascii(-1));
+	printf("Is character 128 ascii ? %i\n", ft_isascii(128));
+
+	printf("\n \033[36m--- ft_isprint ---\033[0m\n");
+	printf("Is character 31(us) printable ? %i\n", ft_isprint(31));
+	printf("Is @ printable ? %i\n", ft_isprint('@'));
+	printf("Is { printable ? %i\n", ft_isprint('{'));
+	printf("Is ' printable ? %i\n", ft_isprint('\''));
+	printf("Is [ printable ? %i\n", ft_isprint('['));
+	printf("Is character -1 printable ? %i\n", ft_isprint(-1));
+	printf("Is character 128 printable ? %i\n", ft_isprint(128));
 
 	printf("\n \033[36m--- ft_toupper ---\033[0m\n");
 	printf("Is a becoming A ? %c\n", ft_toupper('a'));
@@ -185,13 +202,5 @@ int main(void)
 	(ft_isspace(' ') ? printf("\033[1;32mYes\033[0m") : printf("\033[31mGODDAMMIT NO !\033[0m"));
 	printf("\nIs '\\f' = 9 a kind of space ?");
 	(ft_isspace('\f') ? printf("\033[1;32mYes\033[0m") : printf("\033[31mGODDAMMIT NO !\033[0m"));
-
-	printf("\n\n \033[36m--- ft_countwords ---\033[0m\n");
-	printf("How many words in that string : \"Oyo man i know you suck\" ? %i\n", ft_countwords("Oyo man i know you suck"));
-	printf("How many words in that string : \"  Heya    who   the hell are     you ???\" ? %i\n", ft_countwords("  Heya    who   the hell are     you ???"));
-	printf("How many words in that string : \" 1 2 3 4 5 6    \" ? %i\n", ft_countwords(" 1 2 3 4 5 6    "));
-
-
-
 	return (1);
 }
